@@ -31,7 +31,27 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	for _, file := range files {
-		fmt.Println(file)
+
+	resultfile, err := os.Create("_results/files.txt")
+
+	if err != nil {
+		panic(err)
 	}
+	defer resultfile.Close()
+
+	for _, file := range files {
+		_, err = resultfile.WriteString(file + "\n")
+		if err != nil {
+			panic(err)
+		}
+	}
+	// jsonF, err := json.Marshal(files)
+	// err = ioutil.WriteFile("files.txt", jsonF, 0644)
+	// if err != nil {
+	// 	panic(err)
+	// }
+
+	//
+	// 	fmt.Println(file)
+	// }
 }
