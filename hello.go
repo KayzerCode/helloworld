@@ -14,7 +14,7 @@ func init() {
 	stuff = "Ready!!!"
 }
 
-func main() {
+func getdt() {
 	fmt.Printf("Hello, World, this is my first Go app\n")
 	fmt.Println("We are: ", stuff)
 	fmt.Println("Current time is: ", time.Now())
