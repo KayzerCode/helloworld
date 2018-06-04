@@ -15,10 +15,8 @@ func init() {
 
 func main() {
 	fmt.Println(about)
-	fmt.Println("Current time is: ", time.Now())
-
 	var files []string
-	processfolder := "d:/CheckAndDelete/"
+	processfolder := "d:/DelMe100/"
 
 	err := filepath.Walk(processfolder, func(path string, info os.FileInfo, err error) error {
 		// No Folders in List
@@ -45,13 +43,8 @@ func main() {
 			panic(err)
 		}
 	}
-	// jsonF, err := json.Marshal(files)
-	// err = ioutil.WriteFile("files.txt", jsonF, 0644)
-	// if err != nil {
-	// 	panic(err)
-	// }
 
-	//
-	// 	fmt.Println(file)
-	// }
+	fmt.Println("Current time is: ", time.Now())
+	fmt.Println("Total amount of Files:", len(files))
+
 }
